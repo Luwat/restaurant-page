@@ -18,6 +18,6 @@ const Home = (() => {
     }
 })();
 
-const headline = Home.createDiv();
-export default headline;
+const homePage = Home.createDiv();
+export default homePage;
 

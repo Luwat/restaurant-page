@@ -1,6 +1,6 @@
 import './style.css';
 import { nav, navBox, home, menu, contact } from './navbar';
-import headline from './home';
+import homePage from './home';
 import menuPage from './menu';
 import contactPage from './contact';
 
@@ -14,7 +14,7 @@ const restaurantPage = () => {
     navBox.appendChild(menu);
     navBox.appendChild(contact);
     nav.appendChild(navBox);
-    main.appendChild(headline);
+    main.appendChild(homePage);
     
     element.appendChild(nav);
     element.appendChild(main);
@@ -26,17 +26,17 @@ const restaurantPage = () => {
             if (e.target.textContent === 'Home') {
 
                 if (main.contains(menuPage)) {
-                    return main.replaceChild(headline, menuPage)
+                    return main.replaceChild(homePage, menuPage)
                 } else if (main.contains(contactPage)) {
-                    return main.replaceChild(headline, contactPage)
+                    return main.replaceChild(homePage, contactPage)
                 } else {
-                    return main.appendChild(headline);
+                    return main.appendChild(homePage);
                 }
 
             } else if (e.target.textContent === 'Menu') {
 
-                if (main.contains(headline)) {
-                    return main.replaceChild(menuPage, headline)
+                if (main.contains(homePage)) {
+                    return main.replaceChild(menuPage, homePage)
                 } else if (main.contains(contactPage)) {
                     return main.replaceChild(menuPage, contactPage)
                 } else {
@@ -45,8 +45,8 @@ const restaurantPage = () => {
 
             } else if (e.target.textContent === 'Contact') {
                 
-                if (main.contains(headline)) {
-                    return main.replaceChild(contactPage, headline)
+                if (main.contains(homePage)) {
+                    return main.replaceChild(contactPage, homePage)
                 } else if (main.contains(menuPage)) {
                     return main.replaceChild(contactPage, menuPage)
                 } else {
